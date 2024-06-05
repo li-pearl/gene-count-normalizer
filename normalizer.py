@@ -50,13 +50,13 @@ root.title("CSV Normalizer")
 cell_by_gene_label = tk.Label(root, text="No file selected")
 cell_by_gene_label.grid(row=0, column=0, padx=10, pady=5)
 
-cell_by_gene_button = tk.Button(root, text="Select File 1", command=lambda: browse_file(cell_by_gene_label))
+cell_by_gene_button = tk.Button(root, text="Select cell by gene file", command=lambda: browse_file(cell_by_gene_label))
 cell_by_gene_button.grid(row=0, column=1, padx=10, pady=5)
 
 cell_metadata_label = tk.Label(root, text="No file selected")
 cell_metadata_label.grid(row=1, column=0, padx=10, pady=5)
 
-cell_metadata_button = tk.Button(root, text="Select File 2", command=lambda: browse_file(cell_metadata_label))
+cell_metadata_button = tk.Button(root, text="Select cell metadata file", command=lambda: browse_file(cell_metadata_label))
 cell_metadata_button.grid(row=1, column=1, padx=10, pady=5)
 
 normalize_button = tk.Button(root, text="Normalize", command=normalize)
