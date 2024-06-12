@@ -31,5 +31,5 @@ python normalizer.py
 ```
 
 ## Usage
-Select Files: Choose cell by gene and cell metadata files using the buttons.
-Normalize Data: Click the "Create and Download Normalized Data" button to perform the normalization process and download the new CSV.
+1. Select Files: Choose cell by gene and cell metadata files using the buttons.
+2. Normalize Data: Click the "Create and Download Normalized Data" button to perform the normalization process and download the new CSV.
