@@ -13,13 +13,13 @@ def normalize():
     cell_metadata = cell_metadata_label.cget("text")
 
     if cell_by_gene == "No file selected" or cell_metadata == "No file selected":
-        status_label.config(text="Please select both files")
+        status_label.config(text="Please select both files", fg="#f00")
         return
 
     try:
         df_cell_by_gene = pd.read_csv(cell_by_gene)
         df_cell_metadata = pd.read_csv(cell_metadata)
-
+ 
         print("Cell by Gene contents:")
         print(df_cell_by_gene.head())
         print("Cell Metadata contents:")
@@ -29,7 +29,7 @@ def normalize():
         if 'EntityID' in df_cell_metadata.columns:
             df_cell_metadata.rename(columns={'EntityID': 'cell'}, inplace=True)
         else:
-            status_label.config(text="Error: 'EntityID' column not found in the cell metadata file. Check if cell metadata was uploaded")
+            status_label.config(text="Error: 'EntityID' column not found in the cell metadata file. Check if cell metadata was uploaded", fg="#f00")
             return
 
         # Create a dictionary for quick lookup of volumes by cell
@@ -57,7 +57,7 @@ def normalize():
             print(missing_cells_message)
             status_label.config(text=missing_cells_message)
         else:
-            status_label.config(text="Normalization completed successfully.")
+            status_label.config(text="Normalization completed successfully.", fg="#00cd00")
             
         # Create result dataframe
         result_df = df_cell_by_gene[exclude_fields + [field + '_normalized' for field in gene_fields]]
@@ -74,7 +74,7 @@ def normalize():
         result_label.config(text=f"New CSV created: {new_file_name}")
 
     except Exception as e:
-        status_label.config(text=f"Error: {e}")
+        status_label.config(text=f"Error: {e}", fg="#f00")
         print(e)
 
 root = tk.Tk()
