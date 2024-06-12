@@ -1,5 +1,7 @@
 # Gene Count CSV Normalizer Tool
 ## Overview
+![tool after being run](./images/used_file.png)
+
 This is a specialized tool with a simple user-friendly application designed to prepare a large dataset for further analysis. The tool can "normalize" gene counts for each cell in a large MERSCOPE-generated CSV file containing cell by gene data using cell volume data from another large CSV with cell metadata values to account for differences in imaged cell volumes. This tool provides a simple interface for selecting files, performing normalization, and downloading the results. The results are formatted in the same manner as the original cell by gene CSV.
 
 ## Features
@@ -31,5 +33,7 @@ python normalizer.py
 ```
 
 ## Usage
+![tool without being run](./images/unused_file.png)
+
 1. Select Files: Choose cell by gene and cell metadata files using the buttons.
 2. Normalize Data: Click the "Create and Download Normalized Data" button to perform the normalization process and download the new CSV.
